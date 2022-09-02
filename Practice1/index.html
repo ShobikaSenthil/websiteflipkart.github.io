@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Shobika">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>FlipKart</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="data:image/jpeg;base64,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">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> -->
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DynaPuff&family=Lobster&family=Permanent+Marker&family=Play&family=Playfair+Display&family=Rubik+Burned&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    </head>
+    <body>
+       <nav>
+        <div class="logo">
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" width="75px" height="20px">
+            <p>Explore
+                <span class="plus-color">Plus</span>
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" width="10px" height="10px">
+            </p>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search for products brands and more">
+            
+            <!-- <ul class="SearchResult" id="SearchResult">
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+                <li><i class="fa fa-search"></i><a href="#">Product One</a></li>
+            </ul> -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="RecentSearch">
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p>laptop</p>
+            </div>
+            <p class="discovermore">Discover more</p>
+
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>mobile</p>
+            </div>
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>tv</p>
+            </div>
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>fridge</p>
+            </div>
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>shoes</p>
+            </div>
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>dress</p>
+            </div>
+            <div class="RecentSearch_List_discover">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>monitors</p>
+            </div>
+
+            
+            </div>
+        </div> 
+        <div class="dropdown">
+            <button class="loginBtn" type="button" >
+              Login
+            </button>
+            <div class=dropdown-content>
+              <a  href="./signup.html">New Customer?</a>
+              <a  href="#">My Profile</a>
+              <a  href="#">FlipKart Plus</a>
+              <a  href="#">Orders</a>
+              <a  href="#">Whislist</a>
+              <a  href="#">Rewards</a>
+              <a  href="#">Gift Cards</a>
+            </div>
+        </div>
+        <!-- <button class="loginBtn">Login -->
+
+            <!-- <div class="logindropdown">
+                <ul class="logindropdownlist">
+                    <li class="logindropli"><p>New Customer</p></li>
+                    <li class="logindropli"><p>My Profile</p></li>
+                    <li class="logindropli"><p>FlipKart Plus</p></li>
+                    <li class="logindropli"><p>Orders</p></li>
+                    <li class="logindropli"><p>Whislist</p></li>
+                    <li class="logindropli"><p>Rewards</p></li>
+                    <li class="logindropli"><p>Gift Cards</p></li>
+                </ul>
+            </div> -->
+        <!-- </button> -->
+
+        <a href="#" class="Navlink">Become a Seller</a>
+    </div>
+    <div class="dropdown">
+        <a href="#" class="Navlink">More
+            <i class="fa-solid fa-angle-down" class="Navlink angledownIcon"></i>
+        </a>
+        <div class=dropdown-content>
+          <a  href="#">Notification Preferences</a>
+          <a  href="#">24 X 7 Customer Care</a>
+          <a  href="#">Advertise</a>
+          <a  href="#">Download App</a>
+          
+        </div>
+    </div>
+        
+        <a href="#" class="Navlink">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+        </a>
+       </nav>
+
+       <section class="topProductNavbar">
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100">
+            <p>Top Offers</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100">
+            <p>Grocery</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100">
+            <p>Mobiles</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/c12afc017e6f24cb.png?q=100">
+            <p>Fashion</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100">
+            <p>Electronics</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100">
+            <p>Home</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100">
+            <p>Appliances</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100">
+            <p>Travel</p>
+        </div>
+        <div class="topProductNavbar_Nav">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100">
+            <p>Beauty,Toys & More</p>
+        </div>
+
+        
+       </section>
+
+       <!-- <div class="slider">
+        <div class="btn-container btn-left" onclick="left()">
+            <button class="btn"><i class="fa-solid fa-angle-left"></i></button>
+        </div>
+        <div class="Slider_image">
+            <img class="sliderimg" src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ae3b9914b017328f.jpg?q=50">
+            <img class="sliderimg" src="https://rukminim1.flixcart.com/fk-p-flap/844/140/image/1ea56ef125672118.jpg?q=50">
+            <img class="sliderimg" src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ae3b9914b017328f.jpg?q=50">
+            <img class="sliderimg" src="https://rukminim1.flixcart.com/fk-p-flap/844/140/image/1ea56ef125672118.jpg?q=50">
+            <img class="sliderimg" src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ae3b9914b017328f.jpg?q=50">
+        </div>
+
+        <div class="btn-container btn-right" onclick="right()">
+            <button class="btn"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+       </div> -->
+        <!-- <script src="script.js"></script> -->
+        <section>
+            <div class="card1">
+                <div class="swiper">
+                    <!-- <div class="btn-container btn-left" onclick="left()">
+                        <button class="btn"><i class="fa-solid fa-angle-left"></i></button>
+                    </div> -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ddc2e74247e440b2.jpg?q=50"></div>
+                        <div class="swiper-slide"><img src="https://rukminim1.flixcart.com/fk-p-flap/844/140/image/1ea56ef125672118.jpg?q=50"></div>
+                        <div class="swiper-slide"><img src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ae3b9914b017328f.jpg?q=50"></div>
+                        <div class="swiper-slide"><img src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/93cd11580993e47f.jpeg?q=50"></div>
+                        <div class="swiper-slide"><img src="https://rukminim1.flixcart.com/fk-p-flap/844/140/image/07acdd81969fca68.jpg?q=50"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <!-- <div class="btn-container btn-right" onclick="right()">
+                        <button class="btn"><i class="fa-solid fa-angle-right"></i></button>
+                    </div> -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
+       <script>
+        const swiper=new Swiper('.swiper',{
+            autoplay:{
+                delay:3000,
+                disableOnInteraction:false,
+            },
+            loop:true,
+            pagination:{
+                el:'.swiper-pagination',
+                clickable:true,
+            },
+            navigation:{
+                nextEl:'.swiper-button-next',
+                prevEl:'.swiper-button-prev',
+            },
+            
+            },
+        );
+       </script>
+       </section>
+        <section>
+        <div class="card">
+            <div class="common-heading">
+                <div class="common-heading-left">
+                    <h1>Best Electronics</h1>
+                    <h2>Best of Electronics</h2>
+                </div>
+                <div class="common-heading-right">
+                    <button>View All</button>
+                </div>
+            </div>
+            <div class="common-row">
+            <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/kyag87k0/computer/7/r/u/raider-ge66-12ugs-gaming-laptop-msi-original-imagakb9zw7gqzcm.jpeg?q=70">
+            <!-- <p class="gen">12th Gen Laptops</p> -->
+                <h3>Laptops</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>9999</h4>
+                <h6>hp</h6>
+            </div>
+            <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/l5jxt3k0/dslr-camera/m/n/a/-original-imagg7hsggshhwbz.jpeg?q=70">
+            <h3>Top Mirrorless Camera</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>15000</h4>
+                <h6>SONY</h6>
+            </div>
+
+            <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70">
+            <h3>Printers</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>12000</h4>
+                <h6>Canon</h6>
+        </div>
+        <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/kvgzyq80/gimbal/z/d/w/350-black-3-axis-handheld-gimbal-stabilizer-for-smartphones-original-imag8czprcyfefyf.jpeg?q=70">
+            <h3>Stand</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>11000</h4>
+                <h6>SONY</h6>
+        </div>
+        <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/hair-dryer/c/t/g/philips-hp8100-46-original-imaemymzuxrnzfjb.jpeg?q=70">
+            <h3>Dryer</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>10000</h4>
+                <h6>Philips</h6>
+        </div>
+        <div class="common-col">
+            <img src="https://rukminim1.flixcart.com/image/300/300/kq18n0w0/monitor/u/3/d/q24i-1l-23-8-66c0kac3in-lenovo-original-imag44n7ngdqkhcq.jpeg?q=70">
+            <h3>Monitors</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>9898</h4>
+                <h6>Samsung</h6>
+        </div>
+        </div>
+        </div>
+        
+    </section>
+    <section>
+        <div class="card">
+            <div class="common-heading">
+                <div class="common-heading-left">
+                    <h1>Beauty,Food,Toys & more</h1>
+                    <h2>Beauty,Food,Toys & more</h2>
+                </div>
+                <div class="common-heading-right">
+                    <button>View All</button>
+                </div>
+            </div>
+            <div class="common-row">
+            <div class="common-col">
+            <img src="./images/helmet.webp">
+            <!-- <p class="gen">12th Gen Laptops</p> -->
+                <h3>Helmet</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>2000</h4>
+                <h6>SAMSUNG</h6>
+            </div>
+            <div class="common-col">
+            <img src="./images/baby.webp">
+            <h3>Baby bathing Accessories</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>1500</h4>
+                <h6>Redmi</h6>
+            </div>
+
+            <div class="common-col">
+            <img src="./images/baby1.webp">
+            <h3>Toys</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>1000</h4>
+                <h6>Oppo</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/badam.webp">
+            <h3>Badam</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>150</h4>
+                <h6>Vivo</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/soap.webp">
+            <h3>Soap</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>100</h4>
+                <h6>Pears</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/cycle.webp">
+            <h3>Cycle</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>3898</h4>
+                <h6>Techno Spark</h6>
+        </div>
+        </div>
+        </div>
+        
+    </section>
+    <section>
+        <div class="card">
+            <div class="common-heading">
+                <div class="common-heading-left">
+                    <h1>Beauty,Food,Toys & more</h1>
+                    <h2>Beauty,Food,Toys & more</h2>
+                </div>
+                <div class="common-heading-right">
+                    <button>View All</button>
+                </div>
+            </div>
+            <div class="common-row">
+            <div class="common-col">
+            <img src="./images/helmet.webp">
+            <!-- <p class="gen">12th Gen Laptops</p> -->
+                <h3>Helmet</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>2000</h4>
+                <h6>SAMSUNG</h6>
+            </div>
+            <div class="common-col">
+            <img src="./images/baby.webp">
+            <h3>Baby bathing Accessories</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>1500</h4>
+                <h6>Redmi</h6>
+            </div>
+
+            <div class="common-col">
+            <img src="./images/baby1.webp">
+            <h3>Toys</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>1000</h4>
+                <h6>Oppo</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/badam.webp">
+            <h3>Badam</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>150</h4>
+                <h6>Vivo</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/soap.webp">
+            <h3>Soap</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>100</h4>
+                <h6>Pears</h6>
+        </div>
+        <div class="common-col">
+            <img src="./images/cycle.webp">
+            <h3>Cycle</h3>
+                <h4>From <i class="fa-solid fa-indian-rupee-sign"></i>3898</h4>
+                <h6>Techno Spark</h6>
+        </div>
+        </div>
+        </div>
+        
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                        <h4>Online shop</h4>
+                        <ul>
+                            <li><a href="#">watch</a></li>
+                            <li><a href="#">bag</a></li>
+                            <li><a href="#">shoes</a></li>
+                            <li><a href="#">dress</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                        <h4>follow us</h4>
+                        <ul class="social-links">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a>Facebook</li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a>Twitter</li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a>Instagram</li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a>Linked in</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
+</html>
